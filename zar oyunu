@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJELERİM</title>
+  <style type="text/css">
+
+div,die1,die2{
+  float: left;
+  width: 32px;
+  background: #f5f5f5;
+  border: #999 1px solid;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  margin: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="die1">0</div>
+  <div id="die2">0</div>
+  <button onclick="rollDice()">zar atma</button>
+  <h2 id="status" style="clear : left;"></h2>
+
+  <script>
+    function rollDice(){
+      var die1 = document.getElementById('die1')
+      var die2 = document.getElementById('die2')
+      var status = document.getElementById('status')
+      var d1 = Math.floor(Math.random()*6)+1
+      var d2 = Math.floor(Math.random()*6)+1
+      var dicetotal = d1 + d2;
+      die1.innerHTML = d1;
+      die2.innerHTML = d2;
+      status.innerHTML = 'SENİN ZARIN '+dicetotal+'.';
+      if(d1==d2){
+        status.innerHTML += 'DUBLE YAPTIN!!!' 
+
+      
+    }
+    }
+  </script>
+</body>
+</html>
